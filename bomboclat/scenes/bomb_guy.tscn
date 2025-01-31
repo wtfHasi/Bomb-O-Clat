@@ -1,5 +1,6 @@
-[gd_scene load_steps=29 format=3 uid="uid://bdkeh17m4fqkj"]
+[gd_scene load_steps=30 format=3 uid="uid://bdkeh17m4fqkj"]
 
+[ext_resource type="Script" path="res://scripts/bomb_guy.gd" id="1_11cgf"]
 [ext_resource type="Texture2D" uid="uid://che1h3gdgoiso" path="res://assets/Pirate Bomb/Sprites/1-Player-Bomb Guy/1-Idle/1.png" id="1_ph63f"]
 [ext_resource type="Texture2D" uid="uid://c6uho56vsxe7a" path="res://assets/Pirate Bomb/Sprites/1-Player-Bomb Guy/1-Idle/2.png" id="2_y8cfw"]
 [ext_resource type="Texture2D" uid="uid://brgbcvttc3t15" path="res://assets/Pirate Bomb/Sprites/1-Player-Bomb Guy/1-Idle/3.png" id="3_gn3bh"]
@@ -118,12 +119,13 @@ radius = 15.0
 height = 34.0
 
 [node name="BombGuy" type="CharacterBody2D"]
+script = ExtResource("1_11cgf")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -29)
 sprite_frames = SubResource("SpriteFrames_y6flk")
 autoplay = "default"
-frame_progress = 0.216524
+frame_progress = 0.779719
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(3, -26)
