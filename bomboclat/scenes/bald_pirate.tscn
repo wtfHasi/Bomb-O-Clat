@@ -1,0 +1,270 @@
+[gd_scene load_steps=61 format=3 uid="uid://dghh102pwqsjk"]
+
+[ext_resource type="Texture2D" uid="uid://drlpfv8utqkjc" path="res://assets/Pirate Bomb/Sprites/2-Enemy-Bald Pirate/1-Idle/1.png" id="1_qy6gh"]
+[ext_resource type="Texture2D" uid="uid://6bju031emglv" path="res://assets/Pirate Bomb/Sprites/2-Enemy-Bald Pirate/1-Idle/2.png" id="2_urxlb"]
+[ext_resource type="Texture2D" uid="uid://1xoqhasssd34" path="res://assets/Pirate Bomb/Sprites/2-Enemy-Bald Pirate/1-Idle/3.png" id="3_ugf8l"]
+[ext_resource type="Texture2D" uid="uid://ug2j0tc1kq8x" path="res://assets/Pirate Bomb/Sprites/2-Enemy-Bald Pirate/1-Idle/4.png" id="4_ntbsj"]
+[ext_resource type="Texture2D" uid="uid://cs3ps6yttx36p" path="res://assets/Pirate Bomb/Sprites/2-Enemy-Bald Pirate/1-Idle/5.png" id="5_k3hx0"]
+[ext_resource type="Texture2D" uid="uid://cskx4fdyxb7o1" path="res://assets/Pirate Bomb/Sprites/2-Enemy-Bald Pirate/1-Idle/6.png" id="6_u466g"]
+[ext_resource type="Texture2D" uid="uid://bvxjsughsajxd" path="res://assets/Pirate Bomb/Sprites/2-Enemy-Bald Pirate/1-Idle/7.png" id="7_1mirl"]
+[ext_resource type="Texture2D" uid="uid://x66ljudemadm" path="res://assets/Pirate Bomb/Sprites/2-Enemy-Bald Pirate/1-Idle/8.png" id="8_1sfdw"]
+[ext_resource type="Texture2D" uid="uid://tjvii2g183ow" path="res://assets/Pirate Bomb/Sprites/2-Enemy-Bald Pirate/1-Idle/9.png" id="9_2hb2o"]
+[ext_resource type="Texture2D" uid="uid://dnk7b5noq2c7i" path="res://assets/Pirate Bomb/Sprites/2-Enemy-Bald Pirate/1-Idle/10.png" id="10_qfdu0"]
+[ext_resource type="Texture2D" uid="uid://b0llyiyijccx4" path="res://assets/Pirate Bomb/Sprites/2-Enemy-Bald Pirate/1-Idle/11.png" id="11_vwf72"]
+[ext_resource type="Texture2D" uid="uid://bkqhiuovr5yv4" path="res://assets/Pirate Bomb/Sprites/2-Enemy-Bald Pirate/1-Idle/12.png" id="12_xv3lp"]
+[ext_resource type="Texture2D" uid="uid://cmqq86l183v7s" path="res://assets/Pirate Bomb/Sprites/2-Enemy-Bald Pirate/1-Idle/13.png" id="13_iexel"]
+[ext_resource type="Texture2D" uid="uid://bx7mtat7i45bq" path="res://assets/Pirate Bomb/Sprites/2-Enemy-Bald Pirate/1-Idle/14.png" id="14_lwb2b"]
+[ext_resource type="Texture2D" uid="uid://ccklr7x51moby" path="res://assets/Pirate Bomb/Sprites/2-Enemy-Bald Pirate/1-Idle/15.png" id="15_1b0nj"]
+[ext_resource type="Texture2D" uid="uid://cefupd1b4ayvl" path="res://assets/Pirate Bomb/Sprites/2-Enemy-Bald Pirate/1-Idle/16.png" id="16_j4sha"]
+[ext_resource type="Texture2D" uid="uid://cts6bj7bl21dd" path="res://assets/Pirate Bomb/Sprites/2-Enemy-Bald Pirate/1-Idle/17.png" id="17_343es"]
+[ext_resource type="Texture2D" uid="uid://jmj8yxs384vs" path="res://assets/Pirate Bomb/Sprites/2-Enemy-Bald Pirate/1-Idle/18.png" id="18_1qd7j"]
+[ext_resource type="Texture2D" uid="uid://dg0kw02i1xkfb" path="res://assets/Pirate Bomb/Sprites/2-Enemy-Bald Pirate/1-Idle/19.png" id="19_ru2r8"]
+[ext_resource type="Texture2D" uid="uid://b5r2acrd2uoj3" path="res://assets/Pirate Bomb/Sprites/2-Enemy-Bald Pirate/1-Idle/20.png" id="20_fupxn"]
+[ext_resource type="Texture2D" uid="uid://bpee6405es0eg" path="res://assets/Pirate Bomb/Sprites/2-Enemy-Bald Pirate/1-Idle/21.png" id="21_08m6q"]
+[ext_resource type="Texture2D" uid="uid://bhjxji74idks5" path="res://assets/Pirate Bomb/Sprites/2-Enemy-Bald Pirate/1-Idle/22.png" id="22_qw4nu"]
+[ext_resource type="Texture2D" uid="uid://d261mgq54je1u" path="res://assets/Pirate Bomb/Sprites/2-Enemy-Bald Pirate/1-Idle/23.png" id="23_q057p"]
+[ext_resource type="Texture2D" uid="uid://dll556j28ydi8" path="res://assets/Pirate Bomb/Sprites/2-Enemy-Bald Pirate/1-Idle/24.png" id="24_f878s"]
+[ext_resource type="Texture2D" uid="uid://duwppgltq21ky" path="res://assets/Pirate Bomb/Sprites/2-Enemy-Bald Pirate/1-Idle/25.png" id="25_qxw7v"]
+[ext_resource type="Texture2D" uid="uid://vsk6ykh3kogt" path="res://assets/Pirate Bomb/Sprites/2-Enemy-Bald Pirate/1-Idle/26.png" id="26_oqw7j"]
+[ext_resource type="Texture2D" uid="uid://ix35k85p6s8h" path="res://assets/Pirate Bomb/Sprites/2-Enemy-Bald Pirate/1-Idle/27.png" id="27_2qf6t"]
+[ext_resource type="Texture2D" uid="uid://cn4bxcn0t8ipo" path="res://assets/Pirate Bomb/Sprites/2-Enemy-Bald Pirate/1-Idle/28.png" id="28_fju5y"]
+[ext_resource type="Texture2D" uid="uid://ca0a30t8tl3ti" path="res://assets/Pirate Bomb/Sprites/2-Enemy-Bald Pirate/1-Idle/29.png" id="29_bmmxx"]
+[ext_resource type="Texture2D" uid="uid://clkf1umyqwaks" path="res://assets/Pirate Bomb/Sprites/2-Enemy-Bald Pirate/1-Idle/30.png" id="30_utsue"]
+[ext_resource type="Texture2D" uid="uid://35boesslrfi0" path="res://assets/Pirate Bomb/Sprites/2-Enemy-Bald Pirate/1-Idle/31.png" id="31_gxaie"]
+[ext_resource type="Texture2D" uid="uid://bq81r6l607qkf" path="res://assets/Pirate Bomb/Sprites/2-Enemy-Bald Pirate/1-Idle/32.png" id="32_e5ww7"]
+[ext_resource type="Texture2D" uid="uid://cwqnipq2rdtmg" path="res://assets/Pirate Bomb/Sprites/2-Enemy-Bald Pirate/1-Idle/33.png" id="33_1oxkv"]
+[ext_resource type="Texture2D" uid="uid://bl3fccw6cjy3h" path="res://assets/Pirate Bomb/Sprites/2-Enemy-Bald Pirate/1-Idle/34.png" id="34_1e8nw"]
+[ext_resource type="Texture2D" uid="uid://bv6bopr5xcld8" path="res://assets/Pirate Bomb/Sprites/2-Enemy-Bald Pirate/3-Jump Anticipation/1.png" id="35_tvynv"]
+[ext_resource type="Texture2D" uid="uid://biilfjos8ekhg" path="res://assets/Pirate Bomb/Sprites/2-Enemy-Bald Pirate/4-Jump/1.png" id="36_kff2a"]
+[ext_resource type="Texture2D" uid="uid://c3qp00fdstp0g" path="res://assets/Pirate Bomb/Sprites/2-Enemy-Bald Pirate/4-Jump/2.png" id="37_j63oo"]
+[ext_resource type="Texture2D" uid="uid://c0h7a671yo4re" path="res://assets/Pirate Bomb/Sprites/2-Enemy-Bald Pirate/4-Jump/3.png" id="38_nq6sv"]
+[ext_resource type="Texture2D" uid="uid://cln3t4ji61x8k" path="res://assets/Pirate Bomb/Sprites/2-Enemy-Bald Pirate/4-Jump/4.png" id="39_p4qcd"]
+[ext_resource type="Texture2D" uid="uid://cxav0w7xakl6w" path="res://assets/Pirate Bomb/Sprites/2-Enemy-Bald Pirate/5-Fall/1.png" id="40_8gbqo"]
+[ext_resource type="Texture2D" uid="uid://dqm3xw732nnpu" path="res://assets/Pirate Bomb/Sprites/2-Enemy-Bald Pirate/5-Fall/2.png" id="41_n6r5l"]
+[ext_resource type="Texture2D" uid="uid://bda3tcu50lvab" path="res://assets/Pirate Bomb/Sprites/2-Enemy-Bald Pirate/6-Ground/1.png" id="42_avevd"]
+[ext_resource type="Texture2D" uid="uid://bjti1vymq1nv3" path="res://assets/Pirate Bomb/Sprites/2-Enemy-Bald Pirate/6-Ground/2.png" id="43_yo28k"]
+[ext_resource type="Texture2D" uid="uid://dqxy4euu85qs6" path="res://assets/Pirate Bomb/Sprites/2-Enemy-Bald Pirate/6-Ground/3.png" id="44_gj46n"]
+[ext_resource type="Texture2D" uid="uid://befp66g1k65xt" path="res://assets/Pirate Bomb/Sprites/2-Enemy-Bald Pirate/2-Run/1.png" id="45_xq438"]
+[ext_resource type="Texture2D" uid="uid://dqj546265xsn2" path="res://assets/Pirate Bomb/Sprites/2-Enemy-Bald Pirate/2-Run/2.png" id="46_8pih0"]
+[ext_resource type="Texture2D" uid="uid://mde0rwpfo4j5" path="res://assets/Pirate Bomb/Sprites/2-Enemy-Bald Pirate/2-Run/3.png" id="47_p35j4"]
+[ext_resource type="Texture2D" uid="uid://xouvodsij15c" path="res://assets/Pirate Bomb/Sprites/2-Enemy-Bald Pirate/2-Run/4.png" id="48_88ntq"]
+[ext_resource type="Texture2D" uid="uid://cyb2mvsa5e1se" path="res://assets/Pirate Bomb/Sprites/2-Enemy-Bald Pirate/2-Run/5.png" id="49_mrg2j"]
+[ext_resource type="Texture2D" uid="uid://cbgaog1i2a2uj" path="res://assets/Pirate Bomb/Sprites/2-Enemy-Bald Pirate/2-Run/6.png" id="50_ndcqp"]
+[ext_resource type="Texture2D" uid="uid://bkom3r5fqwdao" path="res://assets/Pirate Bomb/Sprites/2-Enemy-Bald Pirate/2-Run/7.png" id="51_aanfn"]
+[ext_resource type="Texture2D" uid="uid://bvct3dwhmlimi" path="res://assets/Pirate Bomb/Sprites/2-Enemy-Bald Pirate/2-Run/8.png" id="52_f0hop"]
+[ext_resource type="Texture2D" uid="uid://ucxdcgktgytg" path="res://assets/Pirate Bomb/Sprites/2-Enemy-Bald Pirate/2-Run/9.png" id="53_dbra2"]
+[ext_resource type="Texture2D" uid="uid://ddegq7lw5j70o" path="res://assets/Pirate Bomb/Sprites/2-Enemy-Bald Pirate/2-Run/10.png" id="54_acsee"]
+[ext_resource type="Texture2D" uid="uid://bnbgyvputfbp0" path="res://assets/Pirate Bomb/Sprites/2-Enemy-Bald Pirate/2-Run/11.png" id="55_8m048"]
+[ext_resource type="Texture2D" uid="uid://ck1lybbgf44ow" path="res://assets/Pirate Bomb/Sprites/2-Enemy-Bald Pirate/2-Run/12.png" id="56_tksid"]
+[ext_resource type="Texture2D" uid="uid://5a0fc4q7t5vp" path="res://assets/Pirate Bomb/Sprites/2-Enemy-Bald Pirate/2-Run/13.png" id="57_th07s"]
+[ext_resource type="Texture2D" uid="uid://baacm77ak3on6" path="res://assets/Pirate Bomb/Sprites/2-Enemy-Bald Pirate/2-Run/14.png" id="58_wcfhm"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c8w18"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_qy6gh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_urxlb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ugf8l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ntbsj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_k3hx0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_u466g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_1mirl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_1sfdw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_2hb2o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_qfdu0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_vwf72")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_xv3lp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_iexel")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_lwb2b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_1b0nj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_j4sha")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_343es")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_1qd7j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_ru2r8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_fupxn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_08m6q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_qw4nu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_q057p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_f878s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_qxw7v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_oqw7j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_2qf6t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_fju5y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_bmmxx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_utsue")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_gxaie")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_e5ww7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_1oxkv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_1e8nw")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("35_tvynv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_kff2a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_j63oo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_nq6sv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_p4qcd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_8gbqo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_n6r5l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_avevd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_yo28k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_gj46n")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("45_xq438")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_8pih0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_p35j4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_88ntq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_mrg2j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_ndcqp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_aanfn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_f0hop")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_dbra2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_acsee")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_8m048")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_tksid")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_th07s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_wcfhm")
+}],
+"loop": true,
+"name": &"run",
+"speed": 20.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1o38a"]
+radius = 17.0
+height = 56.0
+
+[node name="BaldPirate" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -34)
+sprite_frames = SubResource("SpriteFrames_c8w18")
+animation = &"jump"
+autoplay = "idle"
+frame = 3
+frame_progress = 0.0620768
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3, -33)
+shape = SubResource("CapsuleShape2D_1o38a")

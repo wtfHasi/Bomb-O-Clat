@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @onready var sprite := $AnimatedSprite2D  # Reference AnimatedSprite2D
+@onready var bomb_scene := preload("res://scenes/bomb.tscn")  # Load bomb scene
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
@@ -32,3 +33,13 @@ func _physics_process(delta: float) -> void:
 			sprite.play("idle")  # Play idle animation when not moving
 
 	move_and_slide()
+	
+func throw_bomb():
+	var bomb = bomb_scene.instantiate()
+	bomb.position = position  # Start from BombGuy's position
+	bomb.apply_impulse(Vector2(200 * (1 if not sprite.flip_h else -1), -200))  # Throw forward
+	get_parent().add_child(bomb)  # Add bomb to scene
+
+func _input(event):
+	if event.is_action_pressed("throw_bomb"):
+		throw_bomb()
