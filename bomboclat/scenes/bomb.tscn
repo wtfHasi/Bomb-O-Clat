@@ -52,7 +52,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("10_ol3em")
 }],
-"loop": true,
+"loop": false,
 "name": &"explosion",
 "speed": 20.0
 }, {
@@ -104,13 +104,15 @@ animations = [{
 radius = 14.0357
 
 [node name="RigidBody2D" type="RigidBody2D"]
+lock_rotation = true
 script = ExtResource("1_n6v5n")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -35)
 sprite_frames = SubResource("SpriteFrames_i88h6")
-animation = &"on"
-frame_progress = 0.250178
+animation = &"explosion"
+frame = 8
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -16)
