@@ -409,7 +409,7 @@ frame_progress = 0.113233
 position = Vector2(1, -26)
 shape = SubResource("CapsuleShape2D_ibs0s")
 
-[node name="RunParticles" type="AnimatedSprite2D" parent="."]
+[node name="Particles" type="AnimatedSprite2D" parent="."]
 z_index = -1
 position = Vector2(-27, -6)
 sprite_frames = SubResource("SpriteFrames_68uu6")

@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @onready var sprite := $AnimatedSprite2D  # Reference AnimatedSprite2D
-@onready var particles := $RunParticles  # Reference the second AnimatedSprite2D
+@onready var particles := $Particles  # Reference the second AnimatedSprite2D
 @onready var bomb_scene := preload("res://scenes/bomb.tscn")  # Load bomb scene
 
 const SPEED = 300.0
