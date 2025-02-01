@@ -234,7 +234,7 @@ position_smoothing_enabled = true
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(418, 91)
+position = Vector2(375, 178)
 shape = SubResource("WorldBoundaryShape2D_oabwr")
 
 [node name="BaldPirate" parent="." instance=ExtResource("3_ud1eu")]

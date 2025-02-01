@@ -110,9 +110,7 @@ script = ExtResource("1_n6v5n")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -35)
 sprite_frames = SubResource("SpriteFrames_i88h6")
-animation = &"explosion"
-frame = 8
-frame_progress = 1.0
+animation = &"on"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -16)

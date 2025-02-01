@@ -1,0 +1,41 @@
+[gd_scene load_steps=9 format=3 uid="uid://ca653k803nd2v"]
+
+[ext_resource type="Texture2D" uid="uid://38njsu8ft14d" path="res://assets/Pirate Bomb/Sprites/7-Objects/15-Fall Particles/1.png" id="1_48c7s"]
+[ext_resource type="Texture2D" uid="uid://dnhr32e8abcyx" path="res://assets/Pirate Bomb/Sprites/7-Objects/15-Fall Particles/2.png" id="2_fo75q"]
+[ext_resource type="Texture2D" uid="uid://dndmyg6mxebdr" path="res://assets/Pirate Bomb/Sprites/7-Objects/15-Fall Particles/3.png" id="3_hp4v7"]
+[ext_resource type="Texture2D" uid="uid://b0ck1ka64f76b" path="res://assets/Pirate Bomb/Sprites/7-Objects/15-Fall Particles/4.png" id="4_e6a5c"]
+[ext_resource type="Texture2D" uid="uid://rpterthgo27q" path="res://assets/Pirate Bomb/Sprites/7-Objects/15-Fall Particles/5.png" id="5_i5g7q"]
+[ext_resource type="Texture2D" uid="uid://b5dlaqde1fbw5" path="res://assets/Pirate Bomb/Sprites/7-Objects/15-Fall Particles/6.png" id="6_bufcc"]
+[ext_resource type="Script" path="res://scripts/effects/fall_particles.gd" id="7_68561"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e5vri"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_48c7s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_fo75q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_hp4v7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_e6a5c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_i5g7q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_bufcc")
+}],
+"loop": false,
+"name": &"fall",
+"speed": 20.0
+}]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
+position = Vector2(0, -5)
+sprite_frames = SubResource("SpriteFrames_e5vri")
+animation = &"fall"
+script = ExtResource("7_68561")

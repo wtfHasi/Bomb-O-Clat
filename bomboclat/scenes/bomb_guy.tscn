@@ -1,4 +1,4 @@
-[gd_scene load_steps=105 format=3 uid="uid://bdkeh17m4fqkj"]
+[gd_scene load_steps=93 format=3 uid="uid://bdkeh17m4fqkj"]
 
 [ext_resource type="Script" path="res://scripts/bomb_guy.gd" id="1_11cgf"]
 [ext_resource type="Texture2D" uid="uid://che1h3gdgoiso" path="res://assets/Pirate Bomb/Sprites/1-Player-Bomb Guy/1-Idle/1.png" id="1_ph63f"]
@@ -89,18 +89,6 @@
 [ext_resource type="Texture2D" uid="uid://bria4l1xa3aw6" path="res://assets/Pirate Bomb/Sprites/7-Objects/13-Run Particles/4.png" id="87_rkfr3"]
 [ext_resource type="Texture2D" uid="uid://buran2ohhmow" path="res://assets/Pirate Bomb/Sprites/7-Objects/13-Run Particles/5.png" id="88_y2d6x"]
 [ext_resource type="Texture2D" uid="uid://bmwgdillysdd1" path="res://assets/Pirate Bomb/Sprites/7-Objects/13-Run Particles/6.png" id="89_hupc7"]
-[ext_resource type="Texture2D" uid="uid://38njsu8ft14d" path="res://assets/Pirate Bomb/Sprites/7-Objects/15-Fall Particles/1.png" id="90_nr7hg"]
-[ext_resource type="Texture2D" uid="uid://dnhr32e8abcyx" path="res://assets/Pirate Bomb/Sprites/7-Objects/15-Fall Particles/2.png" id="91_02vxo"]
-[ext_resource type="Texture2D" uid="uid://dndmyg6mxebdr" path="res://assets/Pirate Bomb/Sprites/7-Objects/15-Fall Particles/3.png" id="92_ehfr1"]
-[ext_resource type="Texture2D" uid="uid://b0ck1ka64f76b" path="res://assets/Pirate Bomb/Sprites/7-Objects/15-Fall Particles/4.png" id="93_ldbpb"]
-[ext_resource type="Texture2D" uid="uid://rpterthgo27q" path="res://assets/Pirate Bomb/Sprites/7-Objects/15-Fall Particles/5.png" id="94_8tb1a"]
-[ext_resource type="Texture2D" uid="uid://b5dlaqde1fbw5" path="res://assets/Pirate Bomb/Sprites/7-Objects/15-Fall Particles/6.png" id="95_pre81"]
-[ext_resource type="Texture2D" uid="uid://mlf6o8rw2ap6" path="res://assets/Pirate Bomb/Sprites/7-Objects/14-Jump Particles/1.png" id="96_3hany"]
-[ext_resource type="Texture2D" uid="uid://c250kh1x2jjey" path="res://assets/Pirate Bomb/Sprites/7-Objects/14-Jump Particles/2.png" id="97_fk28l"]
-[ext_resource type="Texture2D" uid="uid://jhcc5brcp5ci" path="res://assets/Pirate Bomb/Sprites/7-Objects/14-Jump Particles/3.png" id="98_dtkhx"]
-[ext_resource type="Texture2D" uid="uid://x3g43garyve5" path="res://assets/Pirate Bomb/Sprites/7-Objects/14-Jump Particles/4.png" id="99_iql55"]
-[ext_resource type="Texture2D" uid="uid://hf3mkv1dp1o2" path="res://assets/Pirate Bomb/Sprites/7-Objects/14-Jump Particles/5.png" id="100_pueit"]
-[ext_resource type="Texture2D" uid="uid://e26i2svofs15" path="res://assets/Pirate Bomb/Sprites/7-Objects/14-Jump Particles/6.png" id="101_dv73k"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_y6flk"]
 animations = [{
@@ -401,55 +389,9 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("89_hupc7")
 }],
-"loop": true,
-"name": &"dust",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("90_nr7hg")
-}, {
-"duration": 1.0,
-"texture": ExtResource("91_02vxo")
-}, {
-"duration": 1.0,
-"texture": ExtResource("92_ehfr1")
-}, {
-"duration": 1.0,
-"texture": ExtResource("93_ldbpb")
-}, {
-"duration": 1.0,
-"texture": ExtResource("94_8tb1a")
-}, {
-"duration": 1.0,
-"texture": ExtResource("95_pre81")
-}],
-"loop": true,
-"name": &"fall",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("96_3hany")
-}, {
-"duration": 1.0,
-"texture": ExtResource("97_fk28l")
-}, {
-"duration": 1.0,
-"texture": ExtResource("98_dtkhx")
-}, {
-"duration": 1.0,
-"texture": ExtResource("99_iql55")
-}, {
-"duration": 1.0,
-"texture": ExtResource("100_pueit")
-}, {
-"duration": 1.0,
-"texture": ExtResource("101_dv73k")
-}],
-"loop": true,
-"name": &"jump",
-"speed": 5.0
+"loop": false,
+"name": &"run",
+"speed": 20.0
 }]
 
 [node name="BombGuy" type="CharacterBody2D"]
@@ -467,9 +409,8 @@ frame_progress = 0.113233
 position = Vector2(1, -24)
 shape = SubResource("CapsuleShape2D_ibs0s")
 
-[node name="Particles" type="AnimatedSprite2D" parent="."]
+[node name="RunParticles" type="AnimatedSprite2D" parent="."]
 z_index = -1
 position = Vector2(0, -5)
 sprite_frames = SubResource("SpriteFrames_68uu6")
-animation = &"fall"
-frame_progress = 0.181574
+animation = &"run"
