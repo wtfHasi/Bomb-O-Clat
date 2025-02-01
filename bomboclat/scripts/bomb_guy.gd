@@ -1,16 +1,18 @@
 extends CharacterBody2D
 
 @onready var sprite := $AnimatedSprite2D  # Player sprite
-@onready var run_particles := $RunParticles  # Dust animation for running
-@onready var bomb_scene := preload("res://scenes/bomb.tscn")  # Bomb scene
+@onready var bomb_scene := preload("res://scenes/objects/bomb.tscn")  # Bomb scene
+@onready var run_particles_scene := preload("res://scenes/effects/runParticles.tscn")  # Run effect scene
 @onready var jump_particles_scene := preload("res://scenes/effects/jumpParticles.tscn")  # Jump effect scene
 @onready var fall_particles_scene := preload("res://scenes/effects/fallParticles.tscn")  # Fall effect scene
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
+const RUN_PARTICLE_INTERVAL = 0.1  # Delay between spawning run particles
 
 var jump_position : Vector2 = Vector2.ZERO  # Position where the player jumps from
 var was_in_air = false  # Track if the player was in mid-air
+var run_particle_timer = 0.0  # Timer for run particle effect
 
 func _physics_process(delta: float) -> void:
 	# Add gravity
@@ -37,21 +39,29 @@ func _physics_process(delta: float) -> void:
 
 	if direction:
 		velocity.x = direction * SPEED
-		if is_on_floor():  # Only play run animation if on the ground
-			sprite.play("run")
-			run_particles.play("run")  # Play dust animation
-			run_particles.visible = true  # Make sure it's visible
 
-			# Flip dust animation and move it behind the player
-			run_particles.flip_h = direction < 0
-			run_particles.position.x = 15 if direction < 0 else -15
-		sprite.flip_h = direction < 0
+		if is_on_floor():
+			sprite.play("run")
+
+			# Create run particles at intervals to form a trail effect
+			run_particle_timer += delta
+			if run_particle_timer >= RUN_PARTICLE_INTERVAL:
+				run_particle_timer = 0  # Reset timer
+
+				# Create a new run particle effect at the current position
+				var run_effect = run_particles_scene.instantiate()
+				run_effect.global_position = global_position
+				get_parent().add_child(run_effect)
+				
+				# Flip dust animation based on movement direction
+				run_effect.flip_h = direction < 0
+				run_effect.play("run")
+
+		sprite.flip_h = direction < 0  # Flip sprite direction
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		if is_on_floor():
 			sprite.play("idle")  # Play idle animation when not moving
-			run_particles.stop()
-			run_particles.visible = false  # Hide when not running or jumping
 			
 	# Handle landing effect
 	if is_on_floor() and was_in_air:

@@ -1,8 +1,8 @@
 [gd_scene load_steps=14 format=4 uid="uid://ffcm48eap3c3"]
 
 [ext_resource type="Texture2D" uid="uid://cvw036axc11hb" path="res://assets/Pirate Bomb/Sprites/8-Tile-Sets/Tile-Sets (64-64).png" id="1_mxlto"]
-[ext_resource type="PackedScene" uid="uid://bdkeh17m4fqkj" path="res://scenes/bomb_guy.tscn" id="2_r0pra"]
-[ext_resource type="PackedScene" uid="uid://dghh102pwqsjk" path="res://scenes/bald_pirate.tscn" id="3_ud1eu"]
+[ext_resource type="PackedScene" uid="uid://bdkeh17m4fqkj" path="res://scenes/characters/bomb_guy.tscn" id="2_r0pra"]
+[ext_resource type="PackedScene" uid="uid://dghh102pwqsjk" path="res://scenes/characters/Enemies/bald_pirate.tscn" id="3_ud1eu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_houuo"]
 texture = ExtResource("1_mxlto")

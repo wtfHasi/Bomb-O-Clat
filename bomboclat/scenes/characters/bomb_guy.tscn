@@ -1,4 +1,4 @@
-[gd_scene load_steps=93 format=3 uid="uid://bdkeh17m4fqkj"]
+[gd_scene load_steps=86 format=3 uid="uid://bdkeh17m4fqkj"]
 
 [ext_resource type="Script" path="res://scripts/bomb_guy.gd" id="1_11cgf"]
 [ext_resource type="Texture2D" uid="uid://che1h3gdgoiso" path="res://assets/Pirate Bomb/Sprites/1-Player-Bomb Guy/1-Idle/1.png" id="1_ph63f"]
@@ -83,12 +83,6 @@
 [ext_resource type="Texture2D" uid="uid://cbrki02lmoskn" path="res://assets/Pirate Bomb/Sprites/1-Player-Bomb Guy/2-Run/13.png" id="49_o1gpl"]
 [ext_resource type="Texture2D" uid="uid://b0julvjgq43t1" path="res://assets/Pirate Bomb/Sprites/1-Player-Bomb Guy/2-Run/14.png" id="50_4y6pg"]
 [ext_resource type="Texture2D" uid="uid://hgysl1rnmac2" path="res://assets/Pirate Bomb/Sprites/1-Player-Bomb Guy/3-Jump Anticipation/1.png" id="60_2lu1x"]
-[ext_resource type="Texture2D" uid="uid://dctceou5ca5xp" path="res://assets/Pirate Bomb/Sprites/7-Objects/13-Run Particles/1.png" id="84_r3flx"]
-[ext_resource type="Texture2D" uid="uid://c635rkolqv4a1" path="res://assets/Pirate Bomb/Sprites/7-Objects/13-Run Particles/2.png" id="85_ehe5t"]
-[ext_resource type="Texture2D" uid="uid://6w5fqgfc6q18" path="res://assets/Pirate Bomb/Sprites/7-Objects/13-Run Particles/3.png" id="86_mwnfy"]
-[ext_resource type="Texture2D" uid="uid://bria4l1xa3aw6" path="res://assets/Pirate Bomb/Sprites/7-Objects/13-Run Particles/4.png" id="87_rkfr3"]
-[ext_resource type="Texture2D" uid="uid://buran2ohhmow" path="res://assets/Pirate Bomb/Sprites/7-Objects/13-Run Particles/5.png" id="88_y2d6x"]
-[ext_resource type="Texture2D" uid="uid://bmwgdillysdd1" path="res://assets/Pirate Bomb/Sprites/7-Objects/13-Run Particles/6.png" id="89_hupc7"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_y6flk"]
 animations = [{
@@ -366,33 +360,7 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ibs0s"]
 radius = 19.0
-height = 48.0
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_68uu6"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("84_r3flx")
-}, {
-"duration": 1.0,
-"texture": ExtResource("85_ehe5t")
-}, {
-"duration": 1.0,
-"texture": ExtResource("86_mwnfy")
-}, {
-"duration": 1.0,
-"texture": ExtResource("87_rkfr3")
-}, {
-"duration": 1.0,
-"texture": ExtResource("88_y2d6x")
-}, {
-"duration": 1.0,
-"texture": ExtResource("89_hupc7")
-}],
-"loop": false,
-"name": &"run",
-"speed": 20.0
-}]
+height = 50.0
 
 [node name="BombGuy" type="CharacterBody2D"]
 script = ExtResource("1_11cgf")
@@ -408,9 +376,3 @@ frame_progress = 0.113233
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, -24)
 shape = SubResource("CapsuleShape2D_ibs0s")
-
-[node name="RunParticles" type="AnimatedSprite2D" parent="."]
-z_index = -1
-position = Vector2(0, -5)
-sprite_frames = SubResource("SpriteFrames_68uu6")
-animation = &"run"
