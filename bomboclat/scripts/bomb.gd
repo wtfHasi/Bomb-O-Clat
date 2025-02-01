@@ -4,8 +4,8 @@ extends RigidBody2D
 @onready var timer := $Timer
 
 const EXPLOSION_DELAY = 2.0  # Time (in seconds) before the bomb explodes
-var damage = 50              # Damage dealt by the bomb
-var explosion_radius = 100.0 # Explosion detection radius (adjust as needed)
+@export var damage = 50              # Damage dealt by the bomb
+@export var explosion_radius = 100.0 # Explosion detection radius (adjust as needed)
 
 func _ready() -> void:
 	sprite.play("on")           # Play the active bomb animation

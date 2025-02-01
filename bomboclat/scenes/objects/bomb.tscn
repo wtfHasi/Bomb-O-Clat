@@ -106,6 +106,7 @@ radius = 14.0357
 [node name="RigidBody2D2" type="RigidBody2D"]
 lock_rotation = true
 script = ExtResource("1_lyp2n")
+explosion_radius = 50.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -35)
