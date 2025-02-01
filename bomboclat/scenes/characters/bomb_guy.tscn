@@ -188,7 +188,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("17_xrulc")
 }],
-"loop": true,
+"loop": false,
 "name": &"door_in",
 "speed": 20.0
 }, {
@@ -241,8 +241,33 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("33_yjghh")
 }],
-"loop": true,
+"loop": false,
 "name": &"door_out",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("32_3t7cs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_vjghd")
+}],
+"loop": false,
+"name": &"fall",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("34_bpufe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_psgpf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_dwxxo")
+}],
+"loop": false,
+"name": &"ground",
 "speed": 20.0
 }, {
 "frames": [{
@@ -270,9 +295,9 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("51_lt7nb")
 }],
-"loop": true,
+"loop": false,
 "name": &"hit",
-"speed": 5.0
+"speed": 20.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -359,9 +384,6 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("60_2lu1x")
-}, {
-"duration": 1.0,
 "texture": ExtResource("28_ldtbh")
 }, {
 "duration": 1.0,
@@ -372,24 +394,17 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("31_kqmqn")
-}, {
-"duration": 1.0,
-"texture": ExtResource("32_3t7cs")
-}, {
-"duration": 1.0,
-"texture": ExtResource("33_vjghd")
-}, {
-"duration": 1.0,
-"texture": ExtResource("34_bpufe")
-}, {
-"duration": 1.0,
-"texture": ExtResource("35_psgpf")
-}, {
-"duration": 1.0,
-"texture": ExtResource("36_dwxxo")
 }],
-"loop": true,
+"loop": false,
 "name": &"jump",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("60_2lu1x")
+}],
+"loop": false,
+"name": &"jump_anticipation",
 "speed": 20.0
 }, {
 "frames": [{
@@ -435,7 +450,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("50_4y6pg")
 }],
-"loop": true,
+"loop": false,
 "name": &"run",
 "speed": 20.0
 }]
@@ -450,7 +465,7 @@ script = ExtResource("1_11cgf")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -29)
 sprite_frames = SubResource("SpriteFrames_y6flk")
-animation = &"idle"
+animation = &"fall"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

@@ -128,7 +128,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("12_ifqy5")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack",
 "speed": 20.0
 }, {
@@ -163,7 +163,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("22_yg477")
 }],
-"loop": true,
+"loop": false,
 "name": &"dead_hit",
 "speed": 5.0
 }, {
@@ -192,7 +192,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("30_xup4v")
 }],
-"loop": true,
+"loop": false,
 "name": &"hit",
 "speed": 5.0
 }, {
@@ -395,9 +395,8 @@ height = 56.0
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -34)
 sprite_frames = SubResource("SpriteFrames_c8w18")
-animation = &"idle"
+animation = &"hit"
 autoplay = "idle"
-frame_progress = 0.491124
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-3, -33)
