@@ -1,5 +1,6 @@
-[gd_scene load_steps=91 format=3 uid="uid://dghh102pwqsjk"]
+[gd_scene load_steps=92 format=3 uid="uid://dghh102pwqsjk"]
 
+[ext_resource type="Script" path="res://scripts/characters/baseEnemy.gd" id="1_0o2dy"]
 [ext_resource type="Texture2D" uid="uid://1jfyulos3xf0" path="res://assets/Pirate Bomb/Sprites/2-Enemy-Bald Pirate/7-Attack/1.png" id="1_p0p0e"]
 [ext_resource type="Texture2D" uid="uid://drlpfv8utqkjc" path="res://assets/Pirate Bomb/Sprites/2-Enemy-Bald Pirate/1-Idle/1.png" id="1_qy6gh"]
 [ext_resource type="Texture2D" uid="uid://6bju031emglv" path="res://assets/Pirate Bomb/Sprites/2-Enemy-Bald Pirate/1-Idle/2.png" id="2_urxlb"]
@@ -418,6 +419,7 @@ radius = 17.0
 height = 56.0
 
 [node name="BaldPirate" type="CharacterBody2D"]
+script = ExtResource("1_0o2dy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -34)

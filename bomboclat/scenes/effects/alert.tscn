@@ -1,0 +1,38 @@
+[gd_scene load_steps=8 format=3 uid="uid://xq3it78pbgl8"]
+
+[ext_resource type="Texture2D" uid="uid://b4wbwgrqsod3t" path="res://assets/Pirate Bomb/Sprites/7-Objects/4-Interrogation Dialog/1-Opening/1.png" id="1_jepjj"]
+[ext_resource type="Texture2D" uid="uid://dtrx74lkjenlh" path="res://assets/Pirate Bomb/Sprites/7-Objects/4-Interrogation Dialog/1-Opening/2.png" id="2_iwrya"]
+[ext_resource type="Texture2D" uid="uid://c86gxfp47fc5o" path="res://assets/Pirate Bomb/Sprites/7-Objects/4-Interrogation Dialog/1-Opening/3.png" id="3_q76ib"]
+[ext_resource type="Texture2D" uid="uid://bf3f625b0nfbt" path="res://assets/Pirate Bomb/Sprites/7-Objects/4-Interrogation Dialog/1-Opening/4.png" id="4_jobwd"]
+[ext_resource type="Texture2D" uid="uid://cpro5w1ei1vdd" path="res://assets/Pirate Bomb/Sprites/7-Objects/4-Interrogation Dialog/2-Closing/1.png" id="5_6uc7a"]
+[ext_resource type="Script" path="res://scripts/effects/fall_particles.gd" id="6_jafg4"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jupc6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_jepjj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_iwrya")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_q76ib")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_jobwd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_6uc7a")
+}],
+"loop": false,
+"name": &"alert",
+"speed": 20.0
+}]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_jupc6")
+animation = &"alert"
+frame = 4
+frame_progress = 1.0
+script = ExtResource("6_jafg4")
