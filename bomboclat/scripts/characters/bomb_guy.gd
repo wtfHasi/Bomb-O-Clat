@@ -140,3 +140,4 @@ func apply_damage(amount: int) -> void:
 func die() -> void:
 	# Add your death logic here (e.g., game over, restart level, etc.)
 	print("Player died!")
+	queue_free()  # For now, simply remove the player from the scene.

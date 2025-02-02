@@ -135,7 +135,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("11_gxgco")
 }],
-"loop": true,
+"loop": false,
 "name": &"dead_hit",
 "speed": 20.0
 }, {

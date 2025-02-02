@@ -162,10 +162,47 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("22_yg477")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_bmg60")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_y6pa6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_33dxv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_yg477")
 }],
 "loop": false,
 "name": &"dead_hit",
-"speed": 5.0
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("40_8gbqo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_n6r5l")
+}],
+"loop": false,
+"name": &"fall",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("42_avevd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_yo28k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_gj46n")
+}],
+"loop": false,
+"name": &"ground",
+"speed": 20.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -305,9 +342,6 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("35_tvynv")
-}, {
-"duration": 1.0,
 "texture": ExtResource("36_kff2a")
 }, {
 "duration": 1.0,
@@ -318,24 +352,17 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("39_p4qcd")
-}, {
-"duration": 1.0,
-"texture": ExtResource("40_8gbqo")
-}, {
-"duration": 1.0,
-"texture": ExtResource("41_n6r5l")
-}, {
-"duration": 1.0,
-"texture": ExtResource("42_avevd")
-}, {
-"duration": 1.0,
-"texture": ExtResource("43_yo28k")
-}, {
-"duration": 1.0,
-"texture": ExtResource("44_gj46n")
 }],
 "loop": false,
 "name": &"jump",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("35_tvynv")
+}],
+"loop": false,
+"name": &"jump_anticipation",
 "speed": 20.0
 }, {
 "frames": [{
@@ -395,8 +422,10 @@ height = 56.0
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -34)
 sprite_frames = SubResource("SpriteFrames_c8w18")
-animation = &"hit"
+animation = &"ground"
 autoplay = "idle"
+frame = 2
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-3, -33)
