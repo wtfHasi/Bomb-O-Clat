@@ -135,7 +135,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("11_gxgco")
 }],
-"loop": false,
+"loop": true,
 "name": &"dead_hit",
 "speed": 20.0
 }, {
@@ -461,14 +461,13 @@ height = 50.0
 
 [node name="BombGuy" type="CharacterBody2D"]
 script = ExtResource("1_11cgf")
+knockback_force = 300.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -29)
 sprite_frames = SubResource("SpriteFrames_y6flk")
-animation = &"hit"
+animation = &"dead_hit"
 autoplay = "idle"
-frame = 7
-frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, -24)

@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 # Export health so it can be changed from the Inspector.
 @export var health: int = 100
+@export var knockback_force: float = 50.0  # Adjust this to change the strength of the knockback
 
 @onready var sprite := $AnimatedSprite2D  # Player sprite node
 @onready var bomb_scene := preload("res://scenes/objects/bomb.tscn")  # Bomb scene
@@ -20,13 +21,13 @@ var is_jumping = false  # Prevent multiple jumps during anticipation
 var is_taking_damage = false  # Flag to block normal animations while hit
 
 func _physics_process(delta: float) -> void:
+	# Apply gravity when not on the floor at all times
+	if not is_on_floor():
+		velocity += get_gravity() * delta
+		was_in_air = true
+	
 	# If the player is currently reacting to damage, skip animation updates.
 	if not is_taking_damage:
-		# Apply gravity when not on the floor.
-		if not is_on_floor():
-			velocity += get_gravity() * delta
-			was_in_air = true
-
 		# Detect falling motion (after reaching peak) and play "fall" animation if needed.
 		if velocity.y > 0 and was_in_air and sprite.animation != "fall":
 			sprite.play("fall")
@@ -116,6 +117,11 @@ func apply_damage(amount: int) -> void:
 	health -= amount
 	print("Damage received: ", amount, " Health remaining: ", health)
 	is_taking_damage = true
+	# Apply knockback: if the player is facing left (flip_h true), knock them right; otherwise knock left.
+	# Increase the vertical component (e.g. -1.5 instead of -1) for more upward motion.
+	var raw_direction = Vector2(1, -1.5) if sprite.flip_h else Vector2(-1, -1.5)
+	var knockback_direction: Vector2 = raw_direction.normalized()
+	velocity = knockback_direction * knockback_force
 
 	if health > 0:
 		# Play the "hit" animation.
@@ -134,4 +140,3 @@ func apply_damage(amount: int) -> void:
 func die() -> void:
 	# Add your death logic here (e.g., game over, restart level, etc.)
 	print("Player died!")
-	queue_free()  # For now, simply remove the player from the scene.
