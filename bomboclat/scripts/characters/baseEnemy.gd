@@ -4,6 +4,7 @@ extends CharacterBody2D
 @export var chase_speed: float = 150.0             # Horizontal speed when chasing
 @export var jump_velocity: float = -400.0          # Upward velocity when jumping
 @export var jump_threshold: float = 50.0           # How much higher the player must be to trigger a jump
+@export var RUN_PARTICLE_INTERVAL: float = 0.1  # Time interval between run particles
 
 @export var alert_scene: PackedScene               # The scene for the alert effect
 @export var run_particles_scene: PackedScene       # Scene for run particles
@@ -16,6 +17,7 @@ enum State {
 	CHASING
 }
 var state: int = State.IDLE
+var run_particle_timer: float = 0.0  # Timer for run particle effect
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 
@@ -85,6 +87,16 @@ func _chasing_behavior(delta: float) -> void:
 	velocity.x = direction.x * chase_speed
 	# Flip the sprite based on movement direction.
 	sprite.flip_h = velocity.x < 0
+	# Create run particles at fixed intervals.
+	run_particle_timer += delta
+	if run_particle_timer >= RUN_PARTICLE_INTERVAL:
+		run_particle_timer = 0
+		if run_particles_scene:
+			var rp = run_particles_scene.instantiate()
+			 # Correct **flipping** to match movement direction
+			rp.flip_h = sprite.flip_h
+			get_parent().add_child(rp)
+			rp.play("run")  # plays run effects
 
 	# If the player is above the enemy by jump_threshold and the enemy is on the floor, jump.
 	if is_on_floor() and not is_jumping:
@@ -105,8 +117,7 @@ func _start_jump_sequence() -> void:
 		var jp = jump_particles_scene.instantiate()
 		jp.global_position = global_position
 		get_parent().add_child(jp)
-		if jp.has_method("play"):
-			jp.play("jump")
+		jp.play("jump") #plays jump effects
 	# Small delay to allow the jump to register.
 	await get_tree().create_timer(0.1).timeout
 	# While in the air, if falling, play the fall animation.
@@ -121,8 +132,7 @@ func _start_jump_sequence() -> void:
 		var fp = fall_particles_scene.instantiate()
 		fp.global_position = global_position
 		get_parent().add_child(fp)
-		if fp.has_method("play"):
-			fp.play("fall")
+		fp.play("fall") #plays fall effects
 	await sprite.animation_finished
 	is_jumping = false
 	sprite.play("idle")

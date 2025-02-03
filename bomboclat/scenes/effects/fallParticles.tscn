@@ -38,4 +38,6 @@ animations = [{
 position = Vector2(0, -5)
 sprite_frames = SubResource("SpriteFrames_e5vri")
 animation = &"fall"
+frame = 5
+frame_progress = 1.0
 script = ExtResource("7_68561")

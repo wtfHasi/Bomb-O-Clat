@@ -35,6 +35,7 @@ animations = [{
 }]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D"]
+position = Vector2(0, -5)
 sprite_frames = SubResource("SpriteFrames_a8vqy")
 animation = &"run"
 script = ExtResource("7_ke8om")
