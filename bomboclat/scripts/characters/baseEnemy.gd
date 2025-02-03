@@ -93,8 +93,7 @@ func _chasing_behavior(delta: float) -> void:
 		run_particle_timer = 0
 		if run_particles_scene:
 			var rp = run_particles_scene.instantiate()
-			 # Correct **flipping** to match movement direction
-			rp.flip_h = sprite.flip_h
+			rp.global_position = global_position
 			get_parent().add_child(rp)
 			rp.play("run")  # plays run effects
 
