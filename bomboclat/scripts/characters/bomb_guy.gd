@@ -10,9 +10,9 @@ extends CharacterBody2D
 @onready var jump_particles_scene := preload("res://scenes/effects/jumpParticles.tscn")  # Jump effect scene
 @onready var fall_particles_scene := preload("res://scenes/effects/fallParticles.tscn")  # Fall effect scene
 
-const SPEED = 300.0
+const SPEED = 150.0
 const JUMP_VELOCITY = -400.0
-const RUN_PARTICLE_INTERVAL = 0.1  # Delay between spawning run particles
+const RUN_PARTICLE_INTERVAL = 0.3  # Delay between spawning run particles
 
 var jump_position : Vector2 = Vector2.ZERO  # Position where the player jumps from
 var was_in_air = false  # Track if the player was in mid-air

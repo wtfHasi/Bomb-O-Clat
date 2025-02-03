@@ -9,14 +9,12 @@ extends CharacterBody2D
 @export var health: int = 100                      # Default health for all enemies
 @export var knockback_force: float = 300.0         # Knockback force applied when taking damage
 
-@export var alert_scene: PackedScene               # The scene for the alert effect
 @export var run_particles_scene: PackedScene       # Scene for run particles
 @export var jump_particles_scene: PackedScene      # Scene for jump particles
 @export var fall_particles_scene: PackedScene      # Scene for fall particles
 
 enum State {
 	IDLE,
-	ALERTED,
 	CHASING
 }
 var state: int = State.IDLE
@@ -50,11 +48,8 @@ func _physics_process(delta: float) -> void:
 	if player:
 		var dist: float = global_position.distance_to(player.global_position)
 		if dist <= detection_radius:
-			# If the player is within range and we're idle, switch to ALERTED.
+			# If the player is within range and we're idle.
 			if state == State.IDLE:
-				state = State.ALERTED
-				_alert_behavior()  # This function will await the alert scene.
-			else:
 				state = State.CHASING
 		else:
 			state = State.IDLE
@@ -63,8 +58,6 @@ func _physics_process(delta: float) -> void:
 	match state:
 		State.IDLE:
 			_idle_behavior(delta)
-		State.ALERTED:
-			# ALERTED is handled in _alert_behavior()
 			pass
 		State.CHASING:
 			_chasing_behavior(delta)
@@ -75,17 +68,6 @@ func _physics_process(delta: float) -> void:
 func _idle_behavior(delta: float) -> void:
 	sprite.play("idle")
 	velocity.x = 0
-
-func _alert_behavior() -> void:
-	# Instantiate the alert scene above the enemy.
-	if alert_scene:
-		var alert_instance = alert_scene.instantiate()
-		alert_instance.position = global_position + Vector2(0, -50)  # Adjust as needed.
-		get_parent().add_child(alert_instance)
-		# Await the alert scene's completion signal.
-		await alert_instance.alert_finished
-	# After the alert finishes, switch to chasing.
-	state = State.CHASING
 
 func _chasing_behavior(delta: float) -> void:
 	sprite.play("run")
@@ -146,8 +128,7 @@ func _start_jump_sequence() -> void:
 	sprite.play("idle")
 
 # Called when the enemy is hit by a bomb.
-# knockback_direction should be passed in (e.g., from the bomb impact)
-func apply_damage(amount: int, knockback_direction: Vector2 = Vector2.ZERO) -> void:
+func apply_damage(amount: int) -> void:
 	if is_taking_damage:
 		return
 
@@ -155,10 +136,9 @@ func apply_damage(amount: int, knockback_direction: Vector2 = Vector2.ZERO) -> v
 	print("Enemy took damage:", amount, "Remaining health:", health)
 	is_taking_damage = true
 
-	# Apply knockback if a direction is provided.
-	if knockback_direction != Vector2.ZERO:
-		# Set velocity immediately; this will be respected until _physics_process updates it.
-		velocity = knockback_direction.normalized() * knockback_force
+	var raw_direction = Vector2(1, -1.5) if sprite.flip_h else Vector2(-1, -1.5)
+	var knockback_direction: Vector2 = raw_direction.normalized()
+	velocity = knockback_direction * knockback_force
 	# Check if health has dropped to or below zero.
 	if health > 0:
 		# Play the "hit" animation.

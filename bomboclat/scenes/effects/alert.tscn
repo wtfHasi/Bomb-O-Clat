@@ -34,5 +34,4 @@ animations = [{
 sprite_frames = SubResource("SpriteFrames_jupc6")
 animation = &"alert"
 frame = 4
-frame_progress = 1.0
 script = ExtResource("6_jafg4")
