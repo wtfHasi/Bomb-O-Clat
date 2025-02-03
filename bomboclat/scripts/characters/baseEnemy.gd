@@ -4,7 +4,10 @@ extends CharacterBody2D
 @export var chase_speed: float = 150.0             # Horizontal speed when chasing
 @export var jump_velocity: float = -400.0          # Upward velocity when jumping
 @export var jump_threshold: float = 50.0           # How much higher the player must be to trigger a jump
-@export var RUN_PARTICLE_INTERVAL: float = 0.1  # Time interval between run particles
+@export var RUN_PARTICLE_INTERVAL: float = 0.1     # Time interval between run particles
+
+@export var health: int = 100                      # Default health for all enemies
+@export var knockback_force: float = 300.0         # Knockback force applied when taking damage
 
 @export var alert_scene: PackedScene               # The scene for the alert effect
 @export var run_particles_scene: PackedScene       # Scene for run particles
@@ -17,15 +20,15 @@ enum State {
 	CHASING
 }
 var state: int = State.IDLE
-var run_particle_timer: float = 0.0  # Timer for run particle effect
-
-@onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
-
+var run_particle_timer: float = 0.0               # Timer for run particle effect
+var is_taking_damage: bool = false                # Blocks normal behavior when true
 var player: Node2D = null
 var is_jumping: bool = false
 
+@onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
+
 func _ready() -> void:
-	# Look for the player by group. Make sure your player node is added to the "Player" group.
+	# Look for the player by group (make sure your player is in the "Player" group)
 	var players = get_tree().get_nodes_in_group("Player")
 	if players.size() > 0:
 		player = players[0]
@@ -37,6 +40,11 @@ func _physics_process(delta: float) -> void:
 	# Always apply gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
+
+	# If we're taking damage, skip state-based animation and movement updates.
+	if is_taking_damage:
+		move_and_slide()
+		return
 
 	# Check the distance to the player.
 	if player:
@@ -56,7 +64,7 @@ func _physics_process(delta: float) -> void:
 		State.IDLE:
 			_idle_behavior(delta)
 		State.ALERTED:
-			# The ALERTED state is handled inside _alert_behavior()
+			# ALERTED is handled in _alert_behavior()
 			pass
 		State.CHASING:
 			_chasing_behavior(delta)
@@ -72,8 +80,7 @@ func _alert_behavior() -> void:
 	# Instantiate the alert scene above the enemy.
 	if alert_scene:
 		var alert_instance = alert_scene.instantiate()
-		# Adjust the offset as needed (here, 50 pixels above)
-		alert_instance.position = global_position + Vector2(0, -50)
+		alert_instance.position = global_position + Vector2(0, -50)  # Adjust as needed.
 		get_parent().add_child(alert_instance)
 		# Await the alert scene's completion signal.
 		await alert_instance.alert_finished
@@ -87,15 +94,17 @@ func _chasing_behavior(delta: float) -> void:
 	velocity.x = direction.x * chase_speed
 	# Flip the sprite based on movement direction.
 	sprite.flip_h = velocity.x < 0
+
 	# Create run particles at fixed intervals.
 	run_particle_timer += delta
 	if run_particle_timer >= RUN_PARTICLE_INTERVAL:
 		run_particle_timer = 0
 		if run_particles_scene:
-			var rp = run_particles_scene.instantiate()
+			var rp: AnimatedSprite2D = run_particles_scene.instantiate()
 			rp.global_position = global_position
 			get_parent().add_child(rp)
-			rp.play("run")  # plays run effects
+			rp.flip_h = sprite.flip_h
+			rp.play("run")  # Plays run effects.
 
 	# If the player is above the enemy by jump_threshold and the enemy is on the floor, jump.
 	if is_on_floor() and not is_jumping:
@@ -113,10 +122,10 @@ func _start_jump_sequence() -> void:
 	sprite.play("jump")
 	# Instantiate jump particles, if available.
 	if jump_particles_scene:
-		var jp = jump_particles_scene.instantiate()
+		var jp: AnimatedSprite2D = jump_particles_scene.instantiate()
 		jp.global_position = global_position
 		get_parent().add_child(jp)
-		jp.play("jump") #plays jump effects
+		jp.play("jump")  # Plays jump effects.
 	# Small delay to allow the jump to register.
 	await get_tree().create_timer(0.1).timeout
 	# While in the air, if falling, play the fall animation.
@@ -128,10 +137,43 @@ func _start_jump_sequence() -> void:
 	# Upon landing, play ground animation and instantiate fall particles.
 	sprite.play("ground")
 	if fall_particles_scene:
-		var fp = fall_particles_scene.instantiate()
+		var fp: AnimatedSprite2D = fall_particles_scene.instantiate()
 		fp.global_position = global_position
 		get_parent().add_child(fp)
-		fp.play("fall") #plays fall effects
+		fp.play("fall")  # Plays fall effects.
 	await sprite.animation_finished
 	is_jumping = false
 	sprite.play("idle")
+
+# Called when the enemy is hit by a bomb.
+# knockback_direction should be passed in (e.g., from the bomb impact)
+func apply_damage(amount: int, knockback_direction: Vector2 = Vector2.ZERO) -> void:
+	if is_taking_damage:
+		return
+
+	health -= amount
+	print("Enemy took damage:", amount, "Remaining health:", health)
+	is_taking_damage = true
+
+	# Apply knockback if a direction is provided.
+	if knockback_direction != Vector2.ZERO:
+		# Set velocity immediately; this will be respected until _physics_process updates it.
+		velocity = knockback_direction.normalized() * knockback_force
+	# Check if health has dropped to or below zero.
+	if health > 0:
+		# Play the "hit" animation.
+		sprite.play("hit")
+		await sprite.animation_finished  # Wait until the hit animation finishes.
+		is_taking_damage = false
+		# After finishing hit animation, if the player is still on the ground, revert to idle.
+		if is_on_floor():
+			sprite.play("idle")
+	else:
+		# Health is 0 or below: play the "dead_hit" animation and then process death.
+		sprite.play("dead_hit")
+		await sprite.animation_finished
+		die()
+
+func die() -> void:
+	print("Enemy died!")
+	queue_free()
