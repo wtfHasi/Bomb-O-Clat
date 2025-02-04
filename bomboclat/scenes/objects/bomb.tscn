@@ -103,7 +103,7 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_sc6ba"]
 radius = 14.0357
 
-[node name="RigidBody2D2" type="RigidBody2D"]
+[node name="RigidBody2D2" type="RigidBody2D" groups=["Bombs"]]
 lock_rotation = true
 script = ExtResource("1_lyp2n")
 explosion_radius = 50.0

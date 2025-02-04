@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
-@export var detection_radius: float = 300.0      # Distance within which the enemy detects the player
-@export var chase_speed: float = 150.0             # Horizontal speed when chasing
+@export var detection_radius: float = 150.0      # Distance within which the enemy detects the player
+@export var chase_speed: float = 100.0             # Horizontal speed when chasing
 @export var RUN_PARTICLE_INTERVAL: float = 0.1     # Time interval between run particles
 @export var health: int = 100                      # Default health for all enemies
 @export var knockback_force: float = 300.0         # Knockback force applied when taking damage
@@ -29,7 +29,6 @@ var jump_threshold: float = 50.0           # How much higher the player must be 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 func _ready() -> void:
-	# Look for the player by group (make sure your player is in the "Player" group)
 	var players = get_tree().get_nodes_in_group("Player")
 	if players.size() > 0:
 		player = players[0]
@@ -50,12 +49,17 @@ func _physics_process(delta: float) -> void:
 	if player:
 		var dist: float = global_position.distance_to(player.global_position)
 		if dist <= detection_radius:
-			# If the player is within range and we're idle.
 			if state == State.IDLE:
 				state = State.CHASING
 		else:
 			state = State.IDLE
-
+	
+	# Check for nearby bombs
+	var bombs = get_tree().get_nodes_in_group("Bombs")
+	for bomb in bombs:
+		if global_position.distance_to(bomb.global_position) <= detection_radius:
+			handle_bomb(bomb)  # Calls the overridden function in subclasses
+	
 	# Execute behavior based on current state.
 	match state:
 		State.IDLE:
@@ -195,3 +199,7 @@ func apply_damage(amount: int) -> void:
 func die() -> void:
 	print("Enemy died!")
 	queue_free()
+
+# New method to handle bombs (this will be overridden in subclasses)
+func handle_bomb(bomb: Node2D) -> void:
+	print("Bomb in Range.")
