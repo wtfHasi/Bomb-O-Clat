@@ -10,7 +10,7 @@ extends CharacterBody2D
 @onready var jump_particles_scene := preload("res://scenes/effects/jumpParticles.tscn")  # Jump effect scene
 @onready var fall_particles_scene := preload("res://scenes/effects/fallParticles.tscn")  # Fall effect scene
 
-const SPEED = 150.0
+const SPEED = 200.0
 const JUMP_VELOCITY = -400.0
 const RUN_PARTICLE_INTERVAL = 0.3  # Delay between spawning run particles
 
