@@ -466,7 +466,7 @@ knockback_force = 300.0
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -29)
 sprite_frames = SubResource("SpriteFrames_y6flk")
-animation = &"dead_hit"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
