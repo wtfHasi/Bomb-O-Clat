@@ -2,12 +2,12 @@ extends CharacterBody2D
 
 @export var detection_radius: float = 150.0      # Distance within which the enemy detects the player
 @export var chase_speed: float = 100.0             # Horizontal speed when chasing
-@export var RUN_PARTICLE_INTERVAL: float = 0.1     # Time interval between run particles
+@export var RUN_PARTICLE_INTERVAL: float = 0.3     # Time interval between run particles
 @export var health: int = 100                      # Default health for all enemies
 @export var knockback_force: float = 300.0         # Knockback force applied when taking damage
 @export var attack_range: float = 50.0             # Distance at which the enemy will attack the player
 @export var attack_damage: int = 20                # How much damage the enemy deals per attack
-@export var attack_cooldown: float = 1.0           # Time between attacks
+@export var attack_cooldown: float = 3.0           # Time between attacks
 
 @export var run_particles_scene: PackedScene       # Scene for run particles
 @export var jump_particles_scene: PackedScene      # Scene for jump particles
