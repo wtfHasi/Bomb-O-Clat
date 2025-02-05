@@ -9,10 +9,6 @@ extends CharacterBody2D
 @export var attack_damage: int = 20                # How much damage the enemy deals per attack
 @export var attack_cooldown: float = 3.0           # Time between attacks
 
-@export var run_particles_scene: PackedScene       # Scene for run particles
-@export var jump_particles_scene: PackedScene      # Scene for jump particles
-@export var fall_particles_scene: PackedScene      # Scene for fall particles
-
 enum State {
 	IDLE,
 	CHASING
@@ -27,6 +23,9 @@ var jump_velocity: float = -400.0          # Upward velocity when jumping
 var jump_threshold: float = 50.0           # How much higher the player must be to trigger a jump
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var run_particles_scene := preload("res://scenes/effects/runParticles.tscn")  # Run effect scene
+@onready var jump_particles_scene := preload("res://scenes/effects/jumpParticles.tscn")  # Jump effect scene
+@onready var fall_particles_scene := preload("res://scenes/effects/fallParticles.tscn")  # Fall effect scene
 
 func _ready() -> void:
 	var players = get_tree().get_nodes_in_group("Player")
