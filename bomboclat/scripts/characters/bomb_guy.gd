@@ -1,7 +1,7 @@
 extends CharacterBody2D
-
+signal health_changed(current_health: int)
 # Export health so it can be changed from the Inspector.
-@export var health: int = 100
+@export var health: int = 150
 @export var knockback_force: float = 50.0  # Adjust this to change the strength of the knockback
 
 @onready var sprite := $AnimatedSprite2D  # Player sprite node
@@ -116,6 +116,7 @@ func apply_damage(amount: int) -> void:
 
 	health -= amount
 	print("Damage received: ", amount, " Health remaining: ", health)
+	emit_signal("health_changed", health)
 	is_taking_damage = true
 	# Apply knockback: if the player is facing left (flip_h true), knock them right; otherwise knock left.
 	# Increase the vertical component (e.g. -1.5 instead of -1) for more upward motion.
