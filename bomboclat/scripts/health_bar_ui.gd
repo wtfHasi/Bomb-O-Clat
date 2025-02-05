@@ -1,14 +1,14 @@
 extends Control
 
 @onready var hearts = [
-	$HealthBarBG/Heart1,
-	$HealthBarBG/Heart2,
-	$HealthBarBG/Heart3
+	$HealthBarBG/Health1,
+	$HealthBarBG/Health2,
+	$HealthBarBG/Health3
 ]
 
 func _ready() -> void:
 	# Look for nodes in the "player" group.
-	var players = get_tree().get_nodes_in_group("player")
+	var players = get_tree().get_nodes_in_group("Player")
 	if players.size() > 0:
 		var player = players[0]
 		player.health_changed.connect(Callable(self, "update_health"))
