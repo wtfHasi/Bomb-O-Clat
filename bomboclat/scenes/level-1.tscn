@@ -1,10 +1,19 @@
-[gd_scene load_steps=16 format=4 uid="uid://ffcm48eap3c3"]
+[gd_scene load_steps=32 format=4 uid="uid://ffcm48eap3c3"]
 
 [ext_resource type="Texture2D" uid="uid://cvw036axc11hb" path="res://assets/Pirate Bomb/Sprites/8-Tile-Sets/Tile-Sets (64-64).png" id="1_mxlto"]
+[ext_resource type="Texture2D" uid="uid://d4ayxku7ul5ne" path="res://assets/Pirate Bomb/Sprites/7-Objects/12-Other Objects/Chair.png" id="2_giecl"]
 [ext_resource type="PackedScene" uid="uid://bdkeh17m4fqkj" path="res://scenes/characters/bomb_guy.tscn" id="2_r0pra"]
+[ext_resource type="Texture2D" uid="uid://ddo6o3epws6gn" path="res://assets/Pirate Bomb/Sprites/7-Objects/12-Other Objects/Green Bottle.png" id="3_i8e2p"]
 [ext_resource type="PackedScene" uid="uid://dt8r2mmc871ab" path="res://scenes/healthBarUI.tscn" id="3_ov0rw"]
 [ext_resource type="PackedScene" uid="uid://dghh102pwqsjk" path="res://scenes/characters/Enemies/bald_pirate.tscn" id="3_ud1eu"]
 [ext_resource type="PackedScene" uid="uid://cwu264au2nrpp" path="res://scenes/characters/Enemies/cucumber.tscn" id="4_3d136"]
+[ext_resource type="Texture2D" uid="uid://blydxcj4lo22n" path="res://assets/Pirate Bomb/Sprites/7-Objects/12-Other Objects/Red Bottle.png" id="4_4dmha"]
+[ext_resource type="Texture2D" uid="uid://bx8ottll11ohi" path="res://assets/Pirate Bomb/Sprites/7-Objects/12-Other Objects/Skull.png" id="5_651m6"]
+[ext_resource type="Texture2D" uid="uid://bjcs3lsxu2r64" path="res://assets/Pirate Bomb/Sprites/7-Objects/12-Other Objects/Table.png" id="6_bnjst"]
+[ext_resource type="Texture2D" uid="uid://b687onqpwyt0m" path="res://assets/Pirate Bomb/Sprites/7-Objects/12-Other Objects/Windows.png" id="7_cax4q"]
+[ext_resource type="Texture2D" uid="uid://cxfw6bgbcqamv" path="res://assets/Pirate Bomb/Sprites/7-Objects/12-Other Objects/Barrel.png" id="8_d1lkq"]
+[ext_resource type="Texture2D" uid="uid://bht7idmv4pixa" path="res://assets/Pirate Bomb/Sprites/7-Objects/12-Other Objects/Blue Bottle.png" id="9_l8o5k"]
+[ext_resource type="PackedScene" uid="uid://dw7g33f66yvsd" path="res://scenes/objects/props/barrel.tscn" id="14_gh6vb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_houuo"]
 texture = ExtResource("1_mxlto")
@@ -99,8 +108,48 @@ texture_region_size = Vector2i(64, 64)
 tile_size = Vector2i(64, 64)
 sources/1 = SubResource("TileSetAtlasSource_rekf3")
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_udvmf"]
+texture = ExtResource("2_giecl")
+texture_region_size = Vector2i(64, 64)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o1xh0"]
+texture = ExtResource("3_i8e2p")
+texture_region_size = Vector2i(64, 64)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5uo2p"]
+texture = ExtResource("4_4dmha")
+texture_region_size = Vector2i(64, 64)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fuhof"]
+texture = ExtResource("5_651m6")
+texture_region_size = Vector2i(64, 64)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8uhlb"]
+texture = ExtResource("6_bnjst")
+texture_region_size = Vector2i(64, 64)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m1dsc"]
+texture = ExtResource("7_cax4q")
+texture_region_size = Vector2i(64, 64)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hskk2"]
+texture = ExtResource("8_d1lkq")
+texture_region_size = Vector2i(64, 64)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kyxac"]
+texture = ExtResource("9_l8o5k")
+texture_region_size = Vector2i(64, 64)
+
 [sub_resource type="TileSet" id="TileSet_2ujk6"]
 tile_size = Vector2i(64, 64)
+sources/8 = SubResource("TileSetAtlasSource_hskk2")
+sources/9 = SubResource("TileSetAtlasSource_kyxac")
+sources/10 = SubResource("TileSetAtlasSource_udvmf")
+sources/11 = SubResource("TileSetAtlasSource_o1xh0")
+sources/12 = SubResource("TileSetAtlasSource_5uo2p")
+sources/13 = SubResource("TileSetAtlasSource_fuhof")
+sources/14 = SubResource("TileSetAtlasSource_8uhlb")
+sources/15 = SubResource("TileSetAtlasSource_m1dsc")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a88do"]
 texture = ExtResource("1_mxlto")
@@ -150,7 +199,8 @@ texture_region_size = Vector2i(64, 64)
 
 [sub_resource type="TileSet" id="TileSet_f2ta0"]
 tile_size = Vector2i(64, 64)
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 7
+physics_layer_0/collision_mask = 7
 sources/0 = SubResource("TileSetAtlasSource_a88do")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rfotm"]
@@ -197,11 +247,9 @@ texture_region_size = Vector2i(64, 64)
 
 [sub_resource type="TileSet" id="TileSet_2qtps"]
 tile_size = Vector2i(64, 64)
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 7
+physics_layer_0/collision_mask = 7
 sources/0 = SubResource("TileSetAtlasSource_rfotm")
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_oabwr"]
-distance = -415.0
 
 [node name="Level-1" type="Node2D"]
 
@@ -233,17 +281,8 @@ position = Vector2(511, 463)
 position = Vector2(-5, -7)
 position_smoothing_enabled = true
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(375, 178)
-shape = SubResource("WorldBoundaryShape2D_oabwr")
-
 [node name="BaldPirate" parent="." instance=ExtResource("3_ud1eu")]
 position = Vector2(406, 197)
-
-[node name="CharacterBody2D" parent="." instance=ExtResource("4_3d136")]
-position = Vector2(990, 383)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -254,3 +293,12 @@ offset_left = -63.0
 offset_top = 19.0
 offset_right = -23.0
 offset_bottom = 59.0
+
+[node name="CucumberPirate" parent="." instance=ExtResource("4_3d136")]
+position = Vector2(852, 256)
+
+[node name="Barrel" parent="." instance=ExtResource("14_gh6vb")]
+position = Vector2(697, 511)
+
+[node name="Barrel2" parent="." instance=ExtResource("14_gh6vb")]
+position = Vector2(742, 511)

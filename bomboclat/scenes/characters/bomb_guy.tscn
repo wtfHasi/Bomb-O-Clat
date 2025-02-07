@@ -460,6 +460,8 @@ radius = 19.0
 height = 50.0
 
 [node name="BombGuy" type="CharacterBody2D" groups=["Player"]]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_11cgf")
 knockback_force = 300.0
 
