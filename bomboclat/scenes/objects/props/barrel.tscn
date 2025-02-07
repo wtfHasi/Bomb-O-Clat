@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://dw7g33f66yvsd"]
+[gd_scene load_steps=4 format=3 uid="uid://dw7g33f66yvsd"]
 
+[ext_resource type="Script" path="res://scripts/props.gd" id="1_koue7"]
 [ext_resource type="Texture2D" uid="uid://cxfw6bgbcqamv" path="res://assets/Pirate Bomb/Sprites/7-Objects/12-Other Objects/Barrel.png" id="1_nllrf"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2wfh2"]
@@ -8,8 +9,10 @@ height = 44.0
 
 [node name="Barrel" type="RigidBody2D"]
 z_index = -1
-collision_layer = 4
+collision_layer = 8
 collision_mask = 4
+can_sleep = false
+script = ExtResource("1_koue7")
 
 [node name="Sprite2D" type="Sprite2D" parent="." groups=["props"]]
 position = Vector2(0, -22)

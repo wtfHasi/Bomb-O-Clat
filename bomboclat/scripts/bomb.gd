@@ -4,41 +4,45 @@ extends RigidBody2D
 @onready var timer := $Timer
 
 const EXPLOSION_DELAY = 2.0  # Time (in seconds) before the bomb explodes
-@export var damage = 50              # Damage dealt by the bomb
-@export var explosion_radius = 100.0 # Explosion detection radius (adjust as needed)
+@export var damage = 50                    # Damage dealt by the bomb
+@export var explosion_radius = 100.0       # Explosion detection radius (adjust as needed)
+@export var explosion_strength = 300.0    # The base impulse force magnitude
 
 func _ready() -> void:
-	sprite.play("on")           # Play the active bomb animation
-	timer.start(EXPLOSION_DELAY)  # Start the countdown
+	sprite.play("on")                # Play the active bomb animation
+	timer.start(EXPLOSION_DELAY)     # Start the countdown
 
 func _on_timer_timeout() -> void:
 	explode()
 
 func explode() -> void:
-	# Play the explosion animation
 	sprite.play("explosion")
 	
-	# Use the physics engine to detect bodies within the explosion radius.
 	var space_state = get_world_2d().direct_space_state
-
-	# Create a temporary circle shape to represent the explosion area.
 	var circle_shape = CircleShape2D.new()
 	circle_shape.radius = explosion_radius
-
-	# Set up the query parameters using the bomb's global position.
+	
 	var query = PhysicsShapeQueryParameters2D.new()
 	query.shape = circle_shape
 	query.transform = Transform2D(0, global_position)
 	query.collide_with_bodies = true
 	query.collide_with_areas = true
-
-	# Perform the query.
+	
 	var result = space_state.intersect_shape(query)
+	print("Explosion query hit ", result.size(), " objects.")
+	
 	for item in result:
 		var collider = item.collider
+		print("Detected collider: ", collider.name)
+		
+		# If the collider has an apply_damage method, invoke it.
 		if collider.has_method("apply_damage"):
 			collider.apply_damage(damage)
-	
-	# Wait for the explosion animation to finish before cleaning up.
+		
+		# If the collider has the method to apply the explosion impulse, call it.
+		if collider.has_method("apply_explosion_impulse"):
+			collider.apply_explosion_impulse(global_position, explosion_strength)
+			print("Applied explosion impulse to: ", collider.name)
+			
 	await sprite.animation_finished
 	queue_free()
