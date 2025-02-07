@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=4 uid="uid://ffcm48eap3c3"]
+[gd_scene load_steps=33 format=4 uid="uid://ffcm48eap3c3"]
 
 [ext_resource type="Texture2D" uid="uid://cvw036axc11hb" path="res://assets/Pirate Bomb/Sprites/8-Tile-Sets/Tile-Sets (64-64).png" id="1_mxlto"]
 [ext_resource type="Texture2D" uid="uid://d4ayxku7ul5ne" path="res://assets/Pirate Bomb/Sprites/7-Objects/12-Other Objects/Chair.png" id="2_giecl"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://b687onqpwyt0m" path="res://assets/Pirate Bomb/Sprites/7-Objects/12-Other Objects/Windows.png" id="7_cax4q"]
 [ext_resource type="Texture2D" uid="uid://cxfw6bgbcqamv" path="res://assets/Pirate Bomb/Sprites/7-Objects/12-Other Objects/Barrel.png" id="8_d1lkq"]
 [ext_resource type="Texture2D" uid="uid://bht7idmv4pixa" path="res://assets/Pirate Bomb/Sprites/7-Objects/12-Other Objects/Blue Bottle.png" id="9_l8o5k"]
+[ext_resource type="PackedScene" uid="uid://dryp04r5cce1r" path="res://scenes/objects/props/blueBottle.tscn" id="10_u1gkp"]
 [ext_resource type="PackedScene" uid="uid://dw7g33f66yvsd" path="res://scenes/objects/props/barrel.tscn" id="14_gh6vb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_houuo"]
@@ -274,6 +275,12 @@ tile_set = SubResource("TileSet_f2ta0")
 tile_map_data = PackedByteArray("AAAOAAUAAAAEAAQAAAAJAAcAAAAFAAQAAAAKAAYAAAAFAAQAAAAHAAUAAAAFAAMAAAAIAAUAAAAEAAQAAAAKAAQAAAAEAAMAAAAIAAIAAAAEAAMAAAAJAAIAAAAEAAQAAAA=")
 tile_set = SubResource("TileSet_2qtps")
 
+[node name="BlueBottle" parent="TileMap" instance=ExtResource("10_u1gkp")]
+position = Vector2(625, 447)
+
+[node name="BlueBottle2" parent="TileMap" instance=ExtResource("10_u1gkp")]
+position = Vector2(595, 448)
+
 [node name="BombGuy" parent="." instance=ExtResource("2_r0pra")]
 position = Vector2(511, 463)
 
@@ -298,7 +305,7 @@ offset_bottom = 59.0
 position = Vector2(852, 256)
 
 [node name="Barrel" parent="." instance=ExtResource("14_gh6vb")]
-position = Vector2(697, 511)
+position = Vector2(922, 383)
 
 [node name="Barrel2" parent="." instance=ExtResource("14_gh6vb")]
-position = Vector2(742, 511)
+position = Vector2(719, 510)

@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dryp04r5cce1r"]
+
+[ext_resource type="Script" path="res://scripts/props.gd" id="1_o3wur"]
+[ext_resource type="Texture2D" uid="uid://bht7idmv4pixa" path="res://assets/Pirate Bomb/Sprites/7-Objects/12-Other Objects/Blue Bottle.png" id="2_oddse"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mxqgb"]
+radius = 7.0
+height = 20.0
+
+[node name="BlueBottle" type="RigidBody2D" groups=["props"]]
+script = ExtResource("1_o3wur")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -11)
+texture = ExtResource("2_oddse")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -11)
+shape = SubResource("CapsuleShape2D_mxqgb")
