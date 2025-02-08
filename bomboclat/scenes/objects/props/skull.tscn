@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://bj7ufxdqxf3gy"]
+
+[node name="Skull" type="RigidBody2D"]
