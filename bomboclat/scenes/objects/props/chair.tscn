@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dk5aedbodqfgq"]
+
+[ext_resource type="Script" path="res://scripts/props.gd" id="1_amh1n"]
+[ext_resource type="Texture2D" uid="uid://d4ayxku7ul5ne" path="res://assets/Pirate Bomb/Sprites/7-Objects/12-Other Objects/Chair.png" id="2_r6obf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fdolk"]
+size = Vector2(31, 24)
+
+[node name="Chair" type="RigidBody2D" groups=["props"]]
+collision_layer = 8
+collision_mask = 4
+script = ExtResource("1_amh1n")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -28)
+texture = ExtResource("2_r6obf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -13)
+shape = SubResource("RectangleShape2D_fdolk")
