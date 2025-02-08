@@ -1,3 +1,20 @@
-[gd_scene format=3 uid="uid://bj7ufxdqxf3gy"]
+[gd_scene load_steps=4 format=3 uid="uid://bj7ufxdqxf3gy"]
+
+[ext_resource type="Script" path="res://scripts/props.gd" id="1_ujtwc"]
+[ext_resource type="Texture2D" uid="uid://bx8ottll11ohi" path="res://assets/Pirate Bomb/Sprites/7-Objects/12-Other Objects/Skull.png" id="2_8x6og"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xsgvy"]
+size = Vector2(16, 13)
 
 [node name="Skull" type="RigidBody2D"]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("1_ujtwc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -7)
+texture = ExtResource("2_8x6og")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -6.5)
+shape = SubResource("RectangleShape2D_xsgvy")

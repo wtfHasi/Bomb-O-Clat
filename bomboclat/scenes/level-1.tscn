@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=4 uid="uid://ffcm48eap3c3"]
+[gd_scene load_steps=38 format=4 uid="uid://ffcm48eap3c3"]
 
 [ext_resource type="Texture2D" uid="uid://cvw036axc11hb" path="res://assets/Pirate Bomb/Sprites/8-Tile-Sets/Tile-Sets (64-64).png" id="1_mxlto"]
 [ext_resource type="Texture2D" uid="uid://d4ayxku7ul5ne" path="res://assets/Pirate Bomb/Sprites/7-Objects/12-Other Objects/Chair.png" id="2_giecl"]
@@ -14,8 +14,12 @@
 [ext_resource type="Texture2D" uid="uid://cxfw6bgbcqamv" path="res://assets/Pirate Bomb/Sprites/7-Objects/12-Other Objects/Barrel.png" id="8_d1lkq"]
 [ext_resource type="Texture2D" uid="uid://bht7idmv4pixa" path="res://assets/Pirate Bomb/Sprites/7-Objects/12-Other Objects/Blue Bottle.png" id="9_l8o5k"]
 [ext_resource type="PackedScene" uid="uid://dryp04r5cce1r" path="res://scenes/objects/props/blueBottle.tscn" id="10_u1gkp"]
+[ext_resource type="PackedScene" uid="uid://bj7ufxdqxf3gy" path="res://scenes/objects/props/skull.tscn" id="11_5l4jm"]
+[ext_resource type="PackedScene" uid="uid://dl5l61kibqhuh" path="res://scenes/objects/props/redBottle.tscn" id="12_v0skf"]
 [ext_resource type="PackedScene" uid="uid://dw7g33f66yvsd" path="res://scenes/objects/props/barrel.tscn" id="14_gh6vb"]
 [ext_resource type="PackedScene" uid="uid://dk5aedbodqfgq" path="res://scenes/objects/props/chair.tscn" id="16_nkt1x"]
+[ext_resource type="PackedScene" uid="uid://n7b0c88d0v1v" path="res://scenes/objects/props/table.tscn" id="19_ebx3r"]
+[ext_resource type="PackedScene" uid="uid://bjjdxpcieo7wc" path="res://scenes/objects/props/greenBottle.tscn" id="20_mtoq4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_houuo"]
 texture = ExtResource("1_mxlto")
@@ -277,10 +281,16 @@ tile_map_data = PackedByteArray("AAAOAAUAAAAEAAQAAAAJAAcAAAAFAAQAAAAKAAYAAAAFAAQ
 tile_set = SubResource("TileSet_2qtps")
 
 [node name="BlueBottle" parent="TileMap" instance=ExtResource("10_u1gkp")]
-position = Vector2(625, 447)
+position = Vector2(562, 318)
 
 [node name="BlueBottle2" parent="TileMap" instance=ExtResource("10_u1gkp")]
-position = Vector2(595, 448)
+position = Vector2(534, 318)
+
+[node name="Skull" parent="TileMap" instance=ExtResource("11_5l4jm")]
+position = Vector2(780, 224)
+
+[node name="RedBottle" parent="TileMap" instance=ExtResource("12_v0skf")]
+position = Vector2(814, 225)
 
 [node name="BombGuy" parent="." instance=ExtResource("2_r0pra")]
 position = Vector2(511, 463)
@@ -303,7 +313,7 @@ offset_right = -23.0
 offset_bottom = 59.0
 
 [node name="CucumberPirate" parent="." instance=ExtResource("4_3d136")]
-position = Vector2(852, 256)
+position = Vector2(933, 318)
 
 [node name="Barrel" parent="." instance=ExtResource("14_gh6vb")]
 position = Vector2(922, 383)
@@ -313,5 +323,13 @@ position = Vector2(719, 510)
 
 [node name="Chair" parent="." instance=ExtResource("16_nkt1x")]
 z_index = -1
-position = Vector2(665, 511)
-collision_layer = 4
+position = Vector2(743, 256)
+
+[node name="Table" parent="." instance=ExtResource("19_ebx3r")]
+position = Vector2(797, 256)
+
+[node name="GreenBottle" parent="." instance=ExtResource("20_mtoq4")]
+position = Vector2(551, 129)
+
+[node name="GreenBottle2" parent="." instance=ExtResource("20_mtoq4")]
+position = Vector2(611, 129)

@@ -1,3 +1,20 @@
-[gd_scene format=3 uid="uid://dl5l61kibqhuh"]
+[gd_scene load_steps=4 format=3 uid="uid://dl5l61kibqhuh"]
+
+[ext_resource type="Script" path="res://scripts/props.gd" id="1_6787y"]
+[ext_resource type="Texture2D" uid="uid://blydxcj4lo22n" path="res://assets/Pirate Bomb/Sprites/7-Objects/12-Other Objects/Red Bottle.png" id="2_i3ktx"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o85od"]
+radius = 6.0
 
 [node name="RedBottle" type="RigidBody2D"]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("1_6787y")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -16)
+texture = ExtResource("2_i3ktx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -15)
+shape = SubResource("CapsuleShape2D_o85od")

@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://n7b0c88d0v1v"]
+
+[ext_resource type="Script" path="res://scripts/props.gd" id="1_6vwia"]
+[ext_resource type="Texture2D" uid="uid://bjcs3lsxu2r64" path="res://assets/Pirate Bomb/Sprites/7-Objects/12-Other Objects/Table.png" id="1_ataip"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4y3tv"]
+size = Vector2(50, 31)
+
+[node name="Table" type="RigidBody2D"]
+z_index = -1
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("1_6vwia")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -16)
+texture = ExtResource("1_ataip")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -15.5)
+shape = SubResource("RectangleShape2D_4y3tv")
