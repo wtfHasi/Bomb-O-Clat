@@ -9,6 +9,6 @@ Savvy? Then I bid thee farewell!
 
 ## Demonstration Video
 ![Demonstration GIF](https://github.com/wtfHasi/Bomb-O-Clat/blob/main/bomboclat/assets/Pirate%20Bomb/Demo.gif)
-
+![Demonstration GIF2](https://github.com/wtfHasi/Bomb-O-Clat/blob/main/bomboclat/assets/Pirate%20Bomb/Demo2.gif)
 ## Resources
 Pirate Bomb Pack = https://pixelfrog-assets.itch.io/pirate-bomb
